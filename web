@@ -1,1 +1,1717 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>BosnaChat</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="BosnaChat je namijenjen za upoznavanje osoba, ili jednostavno zelite da se opustite onda ste na pravom mjestu.Mi smo stranica za druzenje,upoznavanje i dopisivanje. Apsolutno ne zelimo teme o Nacionalizmu i Vrijedjanje  drugih nacija,psovke vulgarne rijeci koje ne prilice BosnaChatu,ne dozvolite sebi da budete suspendovani,ili izbaceni sa Chata. Postujte Nasa Pravila.Dobro Dosli!!">
+<meta name="keywords" content="BosnaChat">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link id="siteicon" rel="shortcut icon" type="image/png" href="default_images/icon.png?v=1.09"/>
+<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css?v=1.09" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css?v=1.09" />
+<link rel="stylesheet" type="text/css" href="css/selectboxit.css?v=1.09" />
+<link rel="stylesheet" type="text/css" href="js/jqueryui/jquery-ui.min.css?v=1.09" />
+<link rel="stylesheet" type="text/css" href="css/main.css?v=1.09" />
+<link rel="stylesheet" type="text/css" href="css/stories/story-list.css?v=1.4" />
+<link rel="stylesheet" type="text/css" href="css/stories/story.css?v=1.4" />
+<link id="gradient_sheet" rel="stylesheet" type="text/css" href="css/gradients.css?v=1.09" />
+<link rel="stylesheet" type="text/css" href="css/fonts.css?v=1.09" />
+<link id="actual_theme" rel="stylesheet" type="text/css" href="css/themes/NewayDark/NewayDark.css?v=1.09" />
+<link rel="stylesheet" type="text/css" href="css/responsive.css?v=1.09" />
+<script data-cfasync="false" src="js/jquery-1.11.2.min.js?v=1.09"></script>
+<script data-cfasync="false" src="system/language/Croatia/language.js?v=1.09"></script>
+<script data-cfasync="false" src="js/fancybox/jquery.fancybox.js?v=1.09"></script>
+<script data-cfasync="false" src="js/jqueryui/jquery-ui.min.js?v=1.09"></script>
+<script data-cfasync="false" src="js/global.min.js?v=1.09"></script>
+<script data-cfasync="false" src="js/function_split.js?v=1.09"></script>
+<script data-cfasync="false" src="js/function_logged.js?v=1.09"></script>
+<link rel="stylesheet" type="text/css" href="css/custom.css?v=1.09" />
+	<script data-cfasync="false">
+		var pageEmbed = 0;
+		var pageRoom = 1;
+		var curPage = 'chat';
+		var loadPage = '';
+		var bbfv = '?v=1.09';
+		var rtlMode = '0';
+	</script>
+	<script data-cfasync="false">
+		var user_rank = 1;
+		var user_id = 353;
+		var utk = 'dd17e652cd2a08fdb8bf7f68e2ad3814';
+		var avw = 6;
+		var cvw = 6;
+		var fmw = 10;
+		var geoStatus = 0;
+		var uSound = '1234';
+		var logged = 1;
+	</script>
+	<script data-cfasync="false">
+		var user_room = 1;
+		var sesid = '1';
+		var userAction = '0';
+		var tAction = '10';
+		var pCount = "0";
+		var source = "https://server4p.com:7000/index";
+		var speed = 3000;
+		var inOut = 0;
+		var snum = "3535839920";
+		var balStart = 1;
+		var rightHide = 900;
+		var rightHide2 = 901;
+		var leftHide = 1260;
+		var leftHide2 = 1260;
+		var defRightWidth = 260;
+		var defLeftWidth = 235;
+		var isStoriesEnabled = 1;
+        var storiesAccess = 1;
+	</script>
+<script type="text/javascript" src="js/progressbar.js"></script>
+<style>
 
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(default_images/loader2.gif) center no-repeat #000000d6;
+}
+</style>
+</head>
+<body>
+<div class="se-pre-con"></div>
+<div id="chat_head" class="chat_head">
+	<div onclick="toggleLeft();" class="head_option">
+		<i class="i_btm fa fa-bars"></i>
+		<div id="bottom_news_notify" class="notification bnotify"></div>
+	</div>
+		<div class="chat_head_logo">
+		<img id="main_logo" alt="logo" src="images/rooms/logo/roomlogo_1_5069310829620853.png" onerror="this.src='default_images/logo.png'"/>
+	</div>
+		<div id="empty_top_mob" class="bcell_mid hpad10">
+	</div>
+	<div title="Το προφίλ μου" onclick="editProfile();" class="head_option">
+					<i class="fa fa-gears" style="font-size:24px"></i>
+			</div>
+	<div value="0" onclick="getPrivate();" title="Πριβέ μηνύματα" id="get_private" class="privelem privoff head_option">
+		<i class="i_btm fa fa-envelope"></i>
+		<div id="notify_private" class="notification bnotify"></div>
+	</div>
+		<div onclick="friendRequest();" title="Αιτήματα φιλίας" class="head_option">
+		<i class="i_btm fa fa-user-plus"></i>
+		<div id="notify_friends" class="notification bnotify"></div>
+	</div>
+		<div onclick="getNotification();" title="Ειδοποιήσεις" class="head_option">
+		<i class="i_btm fa fa-bell"></i>
+		<div id="notify_notify" class="notification bnotify"></div>
+	</div>
+		<div onclick="showMenu('mobile_main_menu');" id="main_mob_menu">
+		<img class="avatar_menu glob_av" src="https://bosnachat.net/default_images/default_avatar.png"/>
+		<div id="mobile_main_menu" class="sysmenu hideall sub_menu">
+						<div id="back_home" class="sub_menu_item">
+				<div class="sub_menu_icon">
+					<i class="fa fa-home"></i>
+				</div>
+				<div class="sub_menu_text">
+					Predvorje				</div>
+			</div>
+						<div id="room_setting_menu" class="room_granted nogranted sub_menu_item" onclick="getRoomSetting();">
+				<div class="sub_menu_icon">
+					<i class="fa fa-cog"></i>
+				</div>
+				<div class="sub_menu_text">
+					Postavke sobe				</div>
+			</div>
+						<div id="open_logout" class="sub_menu_item" onclick="openLogout();">
+				<div class="sub_menu_icon">
+					<i class="fa fa-sign-out"></i>
+				</div>
+				<div class="sub_menu_text">
+					Odjavi se				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="global_chat" class="chatheight" style ="background-image: url('/images/rooms/bg/temporary_roombg_62472652_1.png'), url('default_images/default_bg.jpg');" value="1">
+	<div id="chat_left" class="cleft chat_panel pheight" >
+		<div id="chat_left_menu" class="pheight">
+		<div class="left_bar_ctn hidden">
+					<div id="left_panel_bar" class="panel_bar">
+						<div onclick="toggleLeft();" class="panel_bar_item">
+							<i class="fa fa-times"></i>
+						</div>
+						<div class="bcell_mid">
+						</div>
+					</div>
+				</div>
+					
+			<div class="chat_left_menu_wrap">
+				
+            <div id="openCamera"> </div>
+             
+			<div id="stories_menu" class="list_element left_item" onclick="getStoriesList();">
+					<div class="left_item_icon">
+						<i class="fas fa-camera-retro menui"></i>
+					</div>
+					<div class="left_item_text"> Stories (<span id="stories_count">0</span>)
+					</div>
+				</div>
+
+<div class="panel_full_btn getbox list_element left_item">
+
+<div id="stories" class="stories user-icon carousel snapgram">
+</div>
+<script>
+
+updateStoryLog();
+
+getStories();
+
+</script>
+<div id="usersnames">
+</div>
+
+
+
+<center>
+<div style="margin-bottom:5px; cursor: pointer;display:inline-block;vertical-align: middle; line-height: 10px; padding-left:10px;padding-right:10px;padding-top:4px;padding-bottom:4px;font-size:10px;" onclick="getStoriesList();" class=" rounded_button theme_btn">View All Stories</div>
+</center>
+<center>
+<div style="margin-bottom:5px; cursor: pointer;display:inline-block;vertical-align: middle; line-height: 10px; padding-left:10px;padding-right:10px;padding-top:4px;padding-bottom:4px;font-size:10px;" onclick="storiesView();" class=" rounded_button theme_btn">Who saw your story?</div>
+</center>
+</div>	
+				<div id="status_menu" class="left_list">
+					<div id="current_status" class="left_item cur_status">
+						<span class="boom_menu_icon"><i class="fa online status_icon fa-check-circle"></i></span>Na mreži					</div>
+					<div id="status_list" class="hidden">
+						<div class="status_option" data="1"><span class="boom_menu_icon"><i class="fa online status_icon fa-check-circle"></i></span>Na mreži</div><div class="status_option" data="2"><span class="boom_menu_icon"><i title="Odsutan" class="fa absent status_icon fa fa-clock-o"></i></span>Odsutan</div><div class="status_option" data="3"><span class="boom_menu_icon"><i title="Zauzet" class="fa gone status_icon fa-minus-circle"></i></span>Zauzet</div><div class="status_option" data="4"><span class="boom_menu_icon"><i title="Igram se" class="status_icon fa fa-gamepad"></i></span>Igram se</div><div class="status_option" data="5"><span class="boom_menu_icon"><i title="Jedem" class="status_icon fa fa-cutlery"></i></span>Jedem</div><div class="status_option" data="7"><span class="boom_menu_icon"><i title="" class="status_icon fa fa-volume-up" aria-hidden="true"></i></span></div><div class="status_option" data="9"><span class="boom_menu_icon"><i title="" class="status_icon fa fa-television"></i></span></div><div class="status_option" data="10"><span class="boom_menu_icon"><i title="" class="status_icon fa fa-phone" aria-hidden="true"></i></span></div><div class="status_option" data="14"><span class="boom_menu_icon"><i title="" class="status_icon fa fa-coffee" aria-hidden="true"></i></span></div><div class="status_option" data="16"><span class="boom_menu_icon"><i title="" class="status_icon fa fa-shower" aria-hidden="true"></i></span></div><div class="status_option" data="17"><span class="boom_menu_icon"><i title="" class="status_icon fa fa-cart-plus" aria-hidden="true"></i></span></div>					</div>
+				</div>
+				<div id="more_menu"class="left_list">
+					<div id="open_more_menu" class="left_item" onclick="openMoreMenu();">
+						<div class="left_item_icon">
+							<i class="fa fa-plus menui"></i>
+						</div>
+						<div class="left_item_text">
+							Više						</div>
+						<div class="left_item_notify">
+							<span id="news_notify2" class="notif_left bnotify"></span>
+						</div>
+					</div>
+					<div id="more_menu_list" class="hidden">
+					<div id="news_menu" class="left_list left_item" onclick="getNews();">
+					<div class="left_item_icon">
+						<i class="fa fa-newspaper-o"></i>
+					</div>
+					<div class="left_item_text">
+						Novosti					</div>
+					<div class="left_item_notify">
+						<span id="news_notify" class="notif_left bnotify"></span>
+					</div>
+				</div>
+								<div id="wall_menu" class="left_list left_item" onclick="getWall();">
+					<div class="left_item_icon">
+						<i class="fa fa-rss"></i>
+					</div>
+					<div class="left_item_text">
+						Zid prijatelja					</div>
+				</div>
+								
+					<div id="news_menu" class="left_drop_item more_left" onclick="topChatters();">
+	            <div class="left_item_icon">
+		        <i class="fa fa-font-awesome"></i>
+	           </div>
+	           <div class="left_drop_text">Top 10 users</div>
+            </div>
+						<div id="chat_help_menu" class="left_drop_item more_left" onclick="showHelp();">
+							<div class="left_item_icon">
+								<i class="fa fa-life-ring"></i>
+							</div>
+							<div class="left_drop_text">
+								Pomozite							</div>
+						</div>
+				<div id="open_more_menu" class="left_drop_item" onclick="openMoreGameMenu();">
+					<div class="left_item_icon">
+					<i class="fa fa-plus"></i>
+					</div>
+					<div class="left_item_text">
+						Games					</div>
+                        </div>
+			<div id="more_game_menu_list" style="display: none;" class="sub_menu_in">
+			
+			<div id="penalti_menu" class="left_drop_item  more_left" onclick="showPenalti();">
+				<div class="left_item_icon">
+					<i class="fa fa-futbol-o"></i>
+                    </div>
+                    <div class="left_drop_text">
+                    Penalty			</div>	
+			</div>
+			<div id="pacman_menu" class="left_drop_item more_left" onclick="showPacman();">
+				<div class="left_item_icon">
+					<i class="fa fa-meh-o"></i>
+                    </div>
+                    <div class="left_drop_text">
+                    Pacman			</div>	
+			</div>
+			<div id="jackpot_menu" class="left_drop_item more_left" onclick="showJackpot();">
+				<div class="left_item_icon">
+					<i class="fa fa-trophy"></i>
+                    </div>
+                    <div class="left_drop_text">
+                    Jackpot			</div>	
+			</div>
+			
+			</div>
+			
+			</div>
+				</div>
+				<div id="news_menu" class="left_list left_item" onclick="getMessage();">
+				<div class="left_item_icon">
+					<i class="fa fa-commenting-o menui"></i>
+				</div>
+				<div class="left_item_text">
+				Ready messages			</div>
+            </div>
+				<div id="end_left_menu">
+				</div>
+				
+				
+				
+				<div id="container_room">
+					</div>
+			</div>
+<style>
+#gallery {
+  max-width: 230px;
+  margin: 0 auto;
+}
+
+#gallery img {
+  box-sizing: border-box;
+  width: 100%;
+  
+  padding: 2px;
+  /* fill, contain, cover, scale-down : use whichever you like */
+  object-fit: cover;
+  cursor: pointer;
+}
+</style>
+<!-- [THE GALLERY] -->
+<div class="panel_full_btn getbox" id="chat_add_room">
+<marquee onmouseover="stop()" onmouseout="start()" scrollamount="2" behavior="scroll" direction="up" height="150">
+    <div id="gallery"><img class='fancybox' src=' https://bosnachat.net/upload/newsadv/user7_bd73aa7145af.gif'/><img class='fancybox' src=' https://bosnachat.net/upload/newsadv/user7_f994b7218e80.png'/></div>
+</marquee>
+	
+		</div>
+<div class="clear"></div>
+
+<div class="panel_full_btn getbox list_element left_item" id="chat_add_room">
+	<h3><span class="fa fa-flickr"></span><b> The saying of the day</b></h3>
+	<div id="rito"></div>
+</div>
+<div class="clear"></div>
+			<div class="container_extra">
+				<!-- extra content for left panel do not exceed 250px width -->
+				
+			</div>
+		</div>
+	</div>
+	<div id="chat_center" class="background_chat chatheight" style="position:relative;">
+		<div  id="container_chat">
+			<div id="wrap_chat">
+				<div id="warp_show_chat">
+					<div id="container_show_chat">
+						<div id="inside_wrap_chat">
+							<ul class="background_box" id="show_chat" value="1">
+								<ul id="chat_logs_container">
+								</ul>
+							</ul>
+						</div>
+						<div value="0" id="main_emoticon" class="background_box">
+							<div class="emo_head main_emo_head">
+																	<div data="base_emo" class="dark_selected emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/base_emo.png"/></div>
+									<div data="foods" class="emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/foods.png"/></div><div data="gif" class="emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/gif.png"/></div><div data="other" class="emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/other.png"/></div><div data="smilies_xat" class="emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/smilies_xat.png"/></div><div data="sticker_animal" class="emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/sticker_animal.png"/></div><div data="xmas" class="emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/xmas.png"/></div><div data="xoros" class="emo_menu emo_menu_item"><img class="emo_select" src="emoticon_icon/xoros.png"/></div>																<div class="empty_emo">
+								</div>
+								<div class="emo_menu" onclick="hideEmoticon();">
+									<i class="fa fa-times"></i>
+								</div>
+							</div>
+							<div id="main_emo" class="emo_content">
+								<div  title=":00100:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/00100.gif" src="" onclick="emoticon(document.chat_data.content, ':00100:')"/></div><div  title=":004:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/004.gif" src="" onclick="emoticon(document.chat_data.content, ':004:')"/></div><div  title=":005:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/005.gif" src="" onclick="emoticon(document.chat_data.content, ':005:')"/></div><div  title=":00523:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/00523.gif" src="" onclick="emoticon(document.chat_data.content, ':00523:')"/></div><div  title=":005f:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/005f.gif" src="" onclick="emoticon(document.chat_data.content, ':005f:')"/></div><div  title=":015:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/015.gif" src="" onclick="emoticon(document.chat_data.content, ':015:')"/></div><div  title=":0555:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/0555.gif" src="" onclick="emoticon(document.chat_data.content, ':0555:')"/></div><div  title=":0l20:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/0l20.gif" src="" onclick="emoticon(document.chat_data.content, ':0l20:')"/></div><div  title=":1-hug1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/1-hug1.gif" src="" onclick="emoticon(document.chat_data.content, ':1-hug1:')"/></div><div  title=":1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/1.gif" src="" onclick="emoticon(document.chat_data.content, ':1:')"/></div><div  title=":118:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/118.gif" src="" onclick="emoticon(document.chat_data.content, ':118:')"/></div><div  title=":13735095461058:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/13735095461058.gif" src="" onclick="emoticon(document.chat_data.content, ':13735095461058:')"/></div><div  title=":13735096041611:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/13735096041611.gif" src="" onclick="emoticon(document.chat_data.content, ':13735096041611:')"/></div><div  title=":169:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/169.gif" src="" onclick="emoticon(document.chat_data.content, ':169:')"/></div><div  title=":1large:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/1large.gif" src="" onclick="emoticon(document.chat_data.content, ':1large:')"/></div><div  title=":2-geia1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/2-geia1.gif" src="" onclick="emoticon(document.chat_data.content, ':2-geia1:')"/></div><div  title=":2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/2.gif" src="" onclick="emoticon(document.chat_data.content, ':2:')"/></div><div  title=":2015_1391474945_212:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/2015_1391474945_212.gif" src="" onclick="emoticon(document.chat_data.content, ':2015_1391474945_212:')"/></div><div  title=":271:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/271.gif" src="" onclick="emoticon(document.chat_data.content, ':271:')"/></div><div  title=":284:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/284.gif" src="" onclick="emoticon(document.chat_data.content, ':284:')"/></div><div  title=":3-clap1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3-clap1.gif" src="" onclick="emoticon(document.chat_data.content, ':3-clap1:')"/></div><div  title=":3-clap3:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3-clap3.gif" src="" onclick="emoticon(document.chat_data.content, ':3-clap3:')"/></div><div  title=":3-like:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3-like.gif" src="" onclick="emoticon(document.chat_data.content, ':3-like:')"/></div><div  title=":3-margarita:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3-margarita.gif" src="" onclick="emoticon(document.chat_data.content, ':3-margarita:')"/></div><div  title=":3-yes1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3-yes1.gif" src="" onclick="emoticon(document.chat_data.content, ':3-yes1:')"/></div><div  title=":3-yes2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3-yes2.gif" src="" onclick="emoticon(document.chat_data.content, ':3-yes2:')"/></div><div  title=":3-zippo:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3-zippo.gif" src="" onclick="emoticon(document.chat_data.content, ':3-zippo:')"/></div><div  title=":3:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/3.gif" src="" onclick="emoticon(document.chat_data.content, ':3:')"/></div><div  title=":34:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/34.gif" src="" onclick="emoticon(document.chat_data.content, ':34:')"/></div><div  title=":4-lol1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/4-lol1.gif" src="" onclick="emoticon(document.chat_data.content, ':4-lol1:')"/></div><div  title=":4-xaxaxa:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/4-xaxaxa.gif" src="" onclick="emoticon(document.chat_data.content, ':4-xaxaxa:')"/></div><div  title=":4:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/4.gif" src="" onclick="emoticon(document.chat_data.content, ':4:')"/></div><div  title=":410:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/410.gif" src="" onclick="emoticon(document.chat_data.content, ':410:')"/></div><div  title=":4waj:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/4waj.gif" src="" onclick="emoticon(document.chat_data.content, ':4waj:')"/></div><div  title=":5-1rocker:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/5-1rocker.gif" src="" onclick="emoticon(document.chat_data.content, ':5-1rocker:')"/></div><div  title=":5095:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/5095.gif" src="" onclick="emoticon(document.chat_data.content, ':5095:')"/></div><div  title=":54rt:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/54rt.gif" src="" onclick="emoticon(document.chat_data.content, ':54rt:')"/></div><div  title=":6-dance001:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6-dance001.gif" src="" onclick="emoticon(document.chat_data.content, ':6-dance001:')"/></div><div  title=":6-dance1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6-dance1.gif" src="" onclick="emoticon(document.chat_data.content, ':6-dance1:')"/></div><div  title=":6-dance2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6-dance2.gif" src="" onclick="emoticon(document.chat_data.content, ':6-dance2:')"/></div><div  title=":6-dance78:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6-dance78.gif" src="" onclick="emoticon(document.chat_data.content, ':6-dance78:')"/></div><div  title=":6361:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6361.gif" src="" onclick="emoticon(document.chat_data.content, ':6361:')"/></div><div  title=":6393:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6393.gif" src="" onclick="emoticon(document.chat_data.content, ':6393:')"/></div><div  title=":6767:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6767.gif" src="" onclick="emoticon(document.chat_data.content, ':6767:')"/></div><div  title=":6789:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6789.gif" src="" onclick="emoticon(document.chat_data.content, ':6789:')"/></div><div  title=":6795:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/6795.gif" src="" onclick="emoticon(document.chat_data.content, ':6795:')"/></div><div  title=":7-geiamas2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/7-geiamas2.gif" src="" onclick="emoticon(document.chat_data.content, ':7-geiamas2:')"/></div><div  title=":7-geiamas6:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/7-geiamas6.gif" src="" onclick="emoticon(document.chat_data.content, ':7-geiamas6:')"/></div><div  title=":7-ntirla:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/7-ntirla.gif" src="" onclick="emoticon(document.chat_data.content, ':7-ntirla:')"/></div><div  title=":7-xik1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/7-xik1.gif" src="" onclick="emoticon(document.chat_data.content, ':7-xik1:')"/></div><div  title=":70b982e24:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/70b982e24.gif" src="" onclick="emoticon(document.chat_data.content, ':70b982e24:')"/></div><div  title=":75:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/75.gif" src="" onclick="emoticon(document.chat_data.content, ':75:')"/></div><div  title=":8-cd1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/8-cd1.gif" src="" onclick="emoticon(document.chat_data.content, ':8-cd1:')"/></div><div  title=":9-1filakia:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/9-1filakia.gif" src="" onclick="emoticon(document.chat_data.content, ':9-1filakia:')"/></div><div  title=":9-makia-sas2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/9-makia-sas2.gif" src="" onclick="emoticon(document.chat_data.content, ':9-makia-sas2:')"/></div><div  title=":9-makia4:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/9-makia4.gif" src="" onclick="emoticon(document.chat_data.content, ':9-makia4:')"/></div><div  title=":9-makiasas:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/9-makiasas.gif" src="" onclick="emoticon(document.chat_data.content, ':9-makiasas:')"/></div><div  title=":Grupo-Emoticonos-Hoguera-82497:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/Grupo-Emoticonos-Hoguera-82497.gif" src="" onclick="emoticon(document.chat_data.content, ':Grupo-Emoticonos-Hoguera-82497:')"/></div><div  title=":KTngng6Gc:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/KTngng6Gc.gif" src="" onclick="emoticon(document.chat_data.content, ':KTngng6Gc:')"/></div><div  title=":KijLMdB5T:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/KijLMdB5T.gif" src="" onclick="emoticon(document.chat_data.content, ':KijLMdB5T:')"/></div><div  title=":Rofl:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/Rofl.gif" src="" onclick="emoticon(document.chat_data.content, ':Rofl:')"/></div><div  title=":Smiley-Koppels-83199:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/Smiley-Koppels-83199.gif" src="" onclick="emoticon(document.chat_data.content, ':Smiley-Koppels-83199:')"/></div><div  title=":a-baa-wivf-wiv-wpeoiv-wpvn-wpeiuvb:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-baa-wivf-wiv-wpeoiv-wpvn-wpeiuvb.gif" src="" onclick="emoticon(document.chat_data.content, ':a-baa-wivf-wiv-wpeoiv-wpvn-wpeiuvb:')"/></div><div  title=":a-iloveyou:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-iloveyou.gif" src="" onclick="emoticon(document.chat_data.content, ':a-iloveyou:')"/></div><div  title=":a-love10:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-love10.gif" src="" onclick="emoticon(document.chat_data.content, ':a-love10:')"/></div><div  title=":a-love14:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-love14.gif" src="" onclick="emoticon(document.chat_data.content, ':a-love14:')"/></div><div  title=":a-love34:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-love34.gif" src="" onclick="emoticon(document.chat_data.content, ':a-love34:')"/></div><div  title=":a-love5:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-love5.gif" src="" onclick="emoticon(document.chat_data.content, ':a-love5:')"/></div><div  title=":a-loveheart2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-loveheart2.gif" src="" onclick="emoticon(document.chat_data.content, ':a-loveheart2:')"/></div><div  title=":a-loveyou1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/a-loveyou1.gif" src="" onclick="emoticon(document.chat_data.content, ':a-loveyou1:')"/></div><div  title=":am:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/am.gif" src="" onclick="emoticon(document.chat_data.content, ':am:')"/></div><div  title=":b-coffee3:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/b-coffee3.gif" src="" onclick="emoticon(document.chat_data.content, ':b-coffee3:')"/></div><div  title=":bash-head:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/bash-head.gif" src="" onclick="emoticon(document.chat_data.content, ':bash-head:')"/></div><div  title=":best-devil-smiley-emoticon:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/best-devil-smiley-emoticon.gif" src="" onclick="emoticon(document.chat_data.content, ':best-devil-smiley-emoticon:')"/></div><div  title=":boss_day:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/boss_day.gif" src="" onclick="emoticon(document.chat_data.content, ':boss_day:')"/></div><div  title=":bubu:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/bubu.gif" src="" onclick="emoticon(document.chat_data.content, ':bubu:')"/></div><div  title=":bye:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/bye.gif" src="" onclick="emoticon(document.chat_data.content, ':bye:')"/></div><div  title=":c-baby:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/c-baby.gif" src="" onclick="emoticon(document.chat_data.content, ':c-baby:')"/></div><div  title=":c-kalinuxta:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/c-kalinuxta.gif" src="" onclick="emoticon(document.chat_data.content, ':c-kalinuxta:')"/></div><div  title=":capup:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/capup.gif" src="" onclick="emoticon(document.chat_data.content, ':capup:')"/></div><div  title=":clubrc9.gif~c200:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/clubrc9.gif~c200.gif" src="" onclick="emoticon(document.chat_data.content, ':clubrc9.gif~c200:')"/></div><div  title=":coffe:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/coffe.gif" src="" onclick="emoticon(document.chat_data.content, ':coffe:')"/></div><div  title=":connie:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/connie.gif" src="" onclick="emoticon(document.chat_data.content, ':connie:')"/></div><div  title=":d-crying1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-crying1.gif" src="" onclick="emoticon(document.chat_data.content, ':d-crying1:')"/></div><div  title=":d-crying2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-crying2.gif" src="" onclick="emoticon(document.chat_data.content, ':d-crying2:')"/></div><div  title=":d-ee:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-ee.gif" src="" onclick="emoticon(document.chat_data.content, ':d-ee:')"/></div><div  title=":d-eeee2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-eeee2.gif" src="" onclick="emoticon(document.chat_data.content, ':d-eeee2:')"/></div><div  title=":d-no-no:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-no-no.gif" src="" onclick="emoticon(document.chat_data.content, ':d-no-no:')"/></div><div  title=":d-ntropali:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-ntropali.gif" src="" onclick="emoticon(document.chat_data.content, ':d-ntropali:')"/></div><div  title=":d-ntropalo2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-ntropalo2.gif" src="" onclick="emoticon(document.chat_data.content, ':d-ntropalo2:')"/></div><div  title=":d-sad:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-sad.gif" src="" onclick="emoticon(document.chat_data.content, ':d-sad:')"/></div><div  title=":d-sad2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d-sad2.gif" src="" onclick="emoticon(document.chat_data.content, ':d-sad2:')"/></div><div  title=":d946c2d:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/d946c2d.gif" src="" onclick="emoticon(document.chat_data.content, ':d946c2d:')"/></div><div  title=":dan:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/dan.gif" src="" onclick="emoticon(document.chat_data.content, ':dan:')"/></div><div  title=":dizziness:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/dizziness.gif" src="" onclick="emoticon(document.chat_data.content, ':dizziness:')"/></div><div  title=":doe:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/doe.gif" src="" onclick="emoticon(document.chat_data.content, ':doe:')"/></div><div  title=":driver:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/driver.gif" src="" onclick="emoticon(document.chat_data.content, ':driver:')"/></div><div  title=":e-gyros:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/e-gyros.gif" src="" onclick="emoticon(document.chat_data.content, ':e-gyros:')"/></div><div  title=":e-masa1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/e-masa1.gif" src="" onclick="emoticon(document.chat_data.content, ':e-masa1:')"/></div><div  title=":e-masa21:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/e-masa21.gif" src="" onclick="emoticon(document.chat_data.content, ':e-masa21:')"/></div><div  title=":ey:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/ey.gif" src="" onclick="emoticon(document.chat_data.content, ':ey:')"/></div><div  title=":f-doyleia:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-doyleia.gif" src="" onclick="emoticon(document.chat_data.content, ':f-doyleia:')"/></div><div  title=":f-dream2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-dream2.gif" src="" onclick="emoticon(document.chat_data.content, ':f-dream2:')"/></div><div  title=":f-happydance:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-happydance.gif" src="" onclick="emoticon(document.chat_data.content, ':f-happydance:')"/></div><div  title=":f-happyrun1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-happyrun1.gif" src="" onclick="emoticon(document.chat_data.content, ':f-happyrun1:')"/></div><div  title=":f-help1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-help1.gif" src="" onclick="emoticon(document.chat_data.content, ':f-help1:')"/></div><div  title=":f-koynia1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-koynia1.gif" src="" onclick="emoticon(document.chat_data.content, ':f-koynia1:')"/></div><div  title=":f-koynia2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-koynia2.gif" src="" onclick="emoticon(document.chat_data.content, ':f-koynia2:')"/></div><div  title=":f-moires:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-moires.gif" src="" onclick="emoticon(document.chat_data.content, ':f-moires:')"/></div><div  title=":f-moto:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-moto.gif" src="" onclick="emoticon(document.chat_data.content, ':f-moto:')"/></div><div  title=":f-please:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-please.gif" src="" onclick="emoticon(document.chat_data.content, ':f-please:')"/></div><div  title=":f-summer1:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-summer1.gif" src="" onclick="emoticon(document.chat_data.content, ':f-summer1:')"/></div><div  title=":f-sxoinaki:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/f-sxoinaki.gif" src="" onclick="emoticon(document.chat_data.content, ':f-sxoinaki:')"/></div><div  title=":filakia:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/filakia.gif" src="" onclick="emoticon(document.chat_data.content, ':filakia:')"/></div><div  title=":frau-trinkt:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/frau-trinkt.gif" src="" onclick="emoticon(document.chat_data.content, ':frau-trinkt:')"/></div><div  title=":geiamas:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/geiamas.gif" src="" onclick="emoticon(document.chat_data.content, ':geiamas:')"/></div><div  title=":giphy:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/giphy.gif" src="" onclick="emoticon(document.chat_data.content, ':giphy:')"/></div><div  title=":guitar:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/guitar.gif" src="" onclick="emoticon(document.chat_data.content, ':guitar:')"/></div><div  title=":hiall:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/hiall.gif" src="" onclick="emoticon(document.chat_data.content, ':hiall:')"/></div><div  title=":iloveyou:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/iloveyou.gif" src="" onclick="emoticon(document.chat_data.content, ':iloveyou:')"/></div><div  title=":jharo:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/jharo.gif" src="" onclick="emoticon(document.chat_data.content, ':jharo:')"/></div><div  title=":kaamwali:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/kaamwali.gif" src="" onclick="emoticon(document.chat_data.content, ':kaamwali:')"/></div><div  title=":kisslove:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/kisslove.gif" src="" onclick="emoticon(document.chat_data.content, ':kisslove:')"/></div><div  title=":kisslove2:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/kisslove2.gif" src="" onclick="emoticon(document.chat_data.content, ':kisslove2:')"/></div><div  title=":leb:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/leb.gif" src="" onclick="emoticon(document.chat_data.content, ':leb:')"/></div><div  title=":letsdance:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/letsdance.gif" src="" onclick="emoticon(document.chat_data.content, ':letsdance:')"/></div><div  title=":lo:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/lo.gif" src="" onclick="emoticon(document.chat_data.content, ':lo:')"/></div><div  title=":moro:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/moro.gif" src="" onclick="emoticon(document.chat_data.content, ':moro:')"/></div><div  title=":mpou:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/mpou.gif" src="" onclick="emoticon(document.chat_data.content, ':mpou:')"/></div><div  title=":music:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/music.gif" src="" onclick="emoticon(document.chat_data.content, ':music:')"/></div><div  title=":musical:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/musical.gif" src="" onclick="emoticon(document.chat_data.content, ':musical:')"/></div><div  title=":nanana:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/nanana.gif" src="" onclick="emoticon(document.chat_data.content, ':nanana:')"/></div><div  title=":nevra:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/nevra.gif" src="" onclick="emoticon(document.chat_data.content, ':nevra:')"/></div><div  title=":nono:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/nono.gif" src="" onclick="emoticon(document.chat_data.content, ':nono:')"/></div><div  title=":proskino:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/proskino.gif" src="" onclick="emoticon(document.chat_data.content, ':proskino:')"/></div><div  title=":qaf:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/qaf.gif" src="" onclick="emoticon(document.chat_data.content, ':qaf:')"/></div><div  title=":rss4:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/rss4.gif" src="" onclick="emoticon(document.chat_data.content, ':rss4:')"/></div><div  title=":smile-goodbye:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/smile-goodbye.gif" src="" onclick="emoticon(document.chat_data.content, ':smile-goodbye:')"/></div><div  title=":smile:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/smile.png" src="" onclick="emoticon(document.chat_data.content, ':smile:')"/></div><div  title=":t4835:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/t4835.gif" src="" onclick="emoticon(document.chat_data.content, ':t4835:')"/></div><div  title=":thumbsup:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/thumbsup.gif" src="" onclick="emoticon(document.chat_data.content, ':thumbsup:')"/></div><div  title=":tye5ye:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/tye5ye.gif" src="" onclick="emoticon(document.chat_data.content, ':tye5ye:')"/></div><div  title=":usdg:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/usdg.gif" src="" onclick="emoticon(document.chat_data.content, ':usdg:')"/></div><div  title=":wildthing:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/wildthing.gif" src="" onclick="emoticon(document.chat_data.content, ':wildthing:')"/></div><div  title=":z1202:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1202.gif" src="" onclick="emoticon(document.chat_data.content, ':z1202:')"/></div><div  title=":z1207:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1207.gif" src="" onclick="emoticon(document.chat_data.content, ':z1207:')"/></div><div  title=":z1208:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1208.gif" src="" onclick="emoticon(document.chat_data.content, ':z1208:')"/></div><div  title=":z1251:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1251.gif" src="" onclick="emoticon(document.chat_data.content, ':z1251:')"/></div><div  title=":z1252:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1252.gif" src="" onclick="emoticon(document.chat_data.content, ':z1252:')"/></div><div  title=":z1253:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1253.gif" src="" onclick="emoticon(document.chat_data.content, ':z1253:')"/></div><div  title=":z1254:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1254.gif" src="" onclick="emoticon(document.chat_data.content, ':z1254:')"/></div><div  title=":z1255:" class="emoticon closesmilies"><img  class="lazyboom" data-img="emoticon/z1255.gif" src="" onclick="emoticon(document.chat_data.content, ':z1255:')"/></div>							</div>
+						</div>
+						<div id="main_input_extra" class="add_shadow background_box">
+														<div class="sub_options" onclick="getTextOptions();">
+								<img src="default_images/icons/pencil.svg"/>
+							</div>
+														
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="chat_input_container">
+					<div id="top_chat_container">
+						<div id="container_input" class="input_wrap">
+							<form id="main_input" name="chat_data" action="" method="post">
+								<div class="input_table">
+									<div id="ok_sub_item" class="input_item main_item base_main sub_hidden" onclick="getChatSub();">
+										<i class="fa fa-plus input_icon bblock"></i>
+									</div>
+									
+									<div value="0" class="input_item main_item base_main" onclick="showEmoticon();" id="emo_item">
+										<i class="fa fa-smile-o bblock"></i>
+									</div>
+									<div id="main_input_box" class="td_input">
+										<input type="text" spellcheck="false" name="content" placeholder="Napišite nešto..." maxlength="1000" id="content" autocomplete="off"/>
+									</div>
+																		<div class="input_item main_item base_main" id="send_image"><i id="chat_file_icon" data="fa-paperclip" class="fa fa-paperclip bblock"></i>
+										<input id="chat_file" class="up_input" onchange="uploadChat();" type="file"/>
+									</div>
+										
+									<div id="inputt_right" class="main_item">
+										<button type="submit"  class="default_btn csend" id="submit_button"><i class="fa fa-paper-plane"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="chat_right" class="cright chat_panel prheight">
+		<div id="chat_right_content" class="prheight">
+			<div id="wrap_right_data" class="prheight">
+				<div id="right_panel_bar" class="panel_bar">
+					<div onclick="closeRight();" class="panel_bar_item">
+						<i class="fa fa-times"></i>
+					</div>
+					<div class="bcell_mid">
+					</div>
+										<div id="users_option"title="Korisnička lista" class="panel_selected panel_option" onclick="userReload(1);">
+						<i class="fa fa-users"></i>
+					</div>
+										<div id="friends_option" title="Lista prijatelja" class="panel_option" onclick="myFriends(1);">
+						<i class="fa fa-user-plus"></i>
+					</div>
+										<!---<div id="rooms_option" title="Popis soba" class="panel_option" onclick="getRoomList();">
+						<i class="i_btm fa fa-home"></i>
+					</div>--->
+									</div>
+				<div id="chat_right_data" class="crheight">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="private_box" class="privelem prifoff">
+	<div class="top_panel btable top_background" id="private_top">
+		<div onclick="" id="private_av_wrap" class="bcell_mid">
+			<img id="private_av" src="">
+		</div>
+		<div onclick="" id="private_name" class="bcell_mid bellips">
+			<p class="bellips"></p> 
+		</div>
+		<div id="private_min" onclick="togglePrivate(1);" class="private_opt bcell_mid">
+			<i class="fa fa-minus"></i>
+		</div>
+		<div id="private_close" class="private_opt bcell_mid">
+			<i class="fa fa-times"></i>
+		</div>
+	</div>
+	<div id="private_wrap_content">
+		<div id="private_content" class="background_box" value="1">
+			<ul>
+			</ul>
+		</div>
+		<div id="priv_input_extra" class="add_shadow background_box">
+		</div>
+	</div>
+	<div id="private_input" class="input_wrap">
+		<form id="message_form"  action="" method="post" name="private_form">
+			<div class="input_table">
+				<div id="ok_priv_item" class="input_item main_item sub_hidden" onclick="getPrivSub();">
+					<i class="fa fa-plus input_icon bblock"></i>
+				</div>
+				<div value="0" id="emo_item_priv" class="input_item main_item" onclick="showPrivEmoticon();">
+					<i class="fa fa-smile-o"></i>
+				</div>
+				<div id="private_input_box" class="td_input">
+					<input spellcheck="false" id="message_content" placeholder="Napišite nešto..." maxlength="500" autocomplete="off"/>
+				</div>
+								<div class="input_item main_item"><i id="private_file_icon" data="fa-paperclip" class="fa fa-paperclip"></i>
+					<input id="private_file" class="up_input" onchange="uploadPrivate();" type="file"/>
+				</div>
+								<div id="message_send" class="main_item">
+					<button class="default_btn csend" id="private_send"><i class="fa fa-paper-plane"></i></button>
+				</div>
+			</div>
+		</form>
+		<div id="private_emoticon" class="background_box">
+			<div class="emo_head private_emo_head">
+									<div data="base_emo" class="dark_selected emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/base_emo.png"/></div>
+					<div data="foods" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/foods.png"/></div><div data="gif" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/gif.png"/></div><div data="other" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/other.png"/></div><div data="smilies_xat" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/smilies_xat.png"/></div><div data="sticker_animal" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/sticker_animal.png"/></div><div data="xmas" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/xmas.png"/></div><div data="xoros" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="emoticon_icon/xoros.png"/></div>								<div class="empty_emo">
+				</div>
+				<div class="emo_menu" id="emo_close_priv" onclick="hidePrivEmoticon();">
+					<i class="fa fa-times"></i>
+				</div>
+			</div>
+			<div id="private_emo" class="emo_content_priv">
+				<div  title=":00100:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/00100.gif" src="" onclick="emoticon(document.private_form.message_content, ':00100:')"/></div><div  title=":004:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/004.gif" src="" onclick="emoticon(document.private_form.message_content, ':004:')"/></div><div  title=":005:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/005.gif" src="" onclick="emoticon(document.private_form.message_content, ':005:')"/></div><div  title=":00523:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/00523.gif" src="" onclick="emoticon(document.private_form.message_content, ':00523:')"/></div><div  title=":005f:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/005f.gif" src="" onclick="emoticon(document.private_form.message_content, ':005f:')"/></div><div  title=":015:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/015.gif" src="" onclick="emoticon(document.private_form.message_content, ':015:')"/></div><div  title=":0555:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/0555.gif" src="" onclick="emoticon(document.private_form.message_content, ':0555:')"/></div><div  title=":0l20:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/0l20.gif" src="" onclick="emoticon(document.private_form.message_content, ':0l20:')"/></div><div  title=":1-hug1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/1-hug1.gif" src="" onclick="emoticon(document.private_form.message_content, ':1-hug1:')"/></div><div  title=":1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/1.gif" src="" onclick="emoticon(document.private_form.message_content, ':1:')"/></div><div  title=":118:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/118.gif" src="" onclick="emoticon(document.private_form.message_content, ':118:')"/></div><div  title=":13735095461058:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/13735095461058.gif" src="" onclick="emoticon(document.private_form.message_content, ':13735095461058:')"/></div><div  title=":13735096041611:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/13735096041611.gif" src="" onclick="emoticon(document.private_form.message_content, ':13735096041611:')"/></div><div  title=":169:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/169.gif" src="" onclick="emoticon(document.private_form.message_content, ':169:')"/></div><div  title=":1large:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/1large.gif" src="" onclick="emoticon(document.private_form.message_content, ':1large:')"/></div><div  title=":2-geia1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/2-geia1.gif" src="" onclick="emoticon(document.private_form.message_content, ':2-geia1:')"/></div><div  title=":2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/2.gif" src="" onclick="emoticon(document.private_form.message_content, ':2:')"/></div><div  title=":2015_1391474945_212:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/2015_1391474945_212.gif" src="" onclick="emoticon(document.private_form.message_content, ':2015_1391474945_212:')"/></div><div  title=":271:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/271.gif" src="" onclick="emoticon(document.private_form.message_content, ':271:')"/></div><div  title=":284:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/284.gif" src="" onclick="emoticon(document.private_form.message_content, ':284:')"/></div><div  title=":3-clap1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3-clap1.gif" src="" onclick="emoticon(document.private_form.message_content, ':3-clap1:')"/></div><div  title=":3-clap3:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3-clap3.gif" src="" onclick="emoticon(document.private_form.message_content, ':3-clap3:')"/></div><div  title=":3-like:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3-like.gif" src="" onclick="emoticon(document.private_form.message_content, ':3-like:')"/></div><div  title=":3-margarita:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3-margarita.gif" src="" onclick="emoticon(document.private_form.message_content, ':3-margarita:')"/></div><div  title=":3-yes1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3-yes1.gif" src="" onclick="emoticon(document.private_form.message_content, ':3-yes1:')"/></div><div  title=":3-yes2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3-yes2.gif" src="" onclick="emoticon(document.private_form.message_content, ':3-yes2:')"/></div><div  title=":3-zippo:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3-zippo.gif" src="" onclick="emoticon(document.private_form.message_content, ':3-zippo:')"/></div><div  title=":3:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/3.gif" src="" onclick="emoticon(document.private_form.message_content, ':3:')"/></div><div  title=":34:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/34.gif" src="" onclick="emoticon(document.private_form.message_content, ':34:')"/></div><div  title=":4-lol1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/4-lol1.gif" src="" onclick="emoticon(document.private_form.message_content, ':4-lol1:')"/></div><div  title=":4-xaxaxa:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/4-xaxaxa.gif" src="" onclick="emoticon(document.private_form.message_content, ':4-xaxaxa:')"/></div><div  title=":4:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/4.gif" src="" onclick="emoticon(document.private_form.message_content, ':4:')"/></div><div  title=":410:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/410.gif" src="" onclick="emoticon(document.private_form.message_content, ':410:')"/></div><div  title=":4waj:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/4waj.gif" src="" onclick="emoticon(document.private_form.message_content, ':4waj:')"/></div><div  title=":5-1rocker:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/5-1rocker.gif" src="" onclick="emoticon(document.private_form.message_content, ':5-1rocker:')"/></div><div  title=":5095:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/5095.gif" src="" onclick="emoticon(document.private_form.message_content, ':5095:')"/></div><div  title=":54rt:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/54rt.gif" src="" onclick="emoticon(document.private_form.message_content, ':54rt:')"/></div><div  title=":6-dance001:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6-dance001.gif" src="" onclick="emoticon(document.private_form.message_content, ':6-dance001:')"/></div><div  title=":6-dance1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6-dance1.gif" src="" onclick="emoticon(document.private_form.message_content, ':6-dance1:')"/></div><div  title=":6-dance2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6-dance2.gif" src="" onclick="emoticon(document.private_form.message_content, ':6-dance2:')"/></div><div  title=":6-dance78:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6-dance78.gif" src="" onclick="emoticon(document.private_form.message_content, ':6-dance78:')"/></div><div  title=":6361:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6361.gif" src="" onclick="emoticon(document.private_form.message_content, ':6361:')"/></div><div  title=":6393:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6393.gif" src="" onclick="emoticon(document.private_form.message_content, ':6393:')"/></div><div  title=":6767:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6767.gif" src="" onclick="emoticon(document.private_form.message_content, ':6767:')"/></div><div  title=":6789:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6789.gif" src="" onclick="emoticon(document.private_form.message_content, ':6789:')"/></div><div  title=":6795:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/6795.gif" src="" onclick="emoticon(document.private_form.message_content, ':6795:')"/></div><div  title=":7-geiamas2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/7-geiamas2.gif" src="" onclick="emoticon(document.private_form.message_content, ':7-geiamas2:')"/></div><div  title=":7-geiamas6:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/7-geiamas6.gif" src="" onclick="emoticon(document.private_form.message_content, ':7-geiamas6:')"/></div><div  title=":7-ntirla:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/7-ntirla.gif" src="" onclick="emoticon(document.private_form.message_content, ':7-ntirla:')"/></div><div  title=":7-xik1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/7-xik1.gif" src="" onclick="emoticon(document.private_form.message_content, ':7-xik1:')"/></div><div  title=":70b982e24:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/70b982e24.gif" src="" onclick="emoticon(document.private_form.message_content, ':70b982e24:')"/></div><div  title=":75:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/75.gif" src="" onclick="emoticon(document.private_form.message_content, ':75:')"/></div><div  title=":8-cd1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/8-cd1.gif" src="" onclick="emoticon(document.private_form.message_content, ':8-cd1:')"/></div><div  title=":9-1filakia:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/9-1filakia.gif" src="" onclick="emoticon(document.private_form.message_content, ':9-1filakia:')"/></div><div  title=":9-makia-sas2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/9-makia-sas2.gif" src="" onclick="emoticon(document.private_form.message_content, ':9-makia-sas2:')"/></div><div  title=":9-makia4:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/9-makia4.gif" src="" onclick="emoticon(document.private_form.message_content, ':9-makia4:')"/></div><div  title=":9-makiasas:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/9-makiasas.gif" src="" onclick="emoticon(document.private_form.message_content, ':9-makiasas:')"/></div><div  title=":Grupo-Emoticonos-Hoguera-82497:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/Grupo-Emoticonos-Hoguera-82497.gif" src="" onclick="emoticon(document.private_form.message_content, ':Grupo-Emoticonos-Hoguera-82497:')"/></div><div  title=":KTngng6Gc:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/KTngng6Gc.gif" src="" onclick="emoticon(document.private_form.message_content, ':KTngng6Gc:')"/></div><div  title=":KijLMdB5T:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/KijLMdB5T.gif" src="" onclick="emoticon(document.private_form.message_content, ':KijLMdB5T:')"/></div><div  title=":Rofl:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/Rofl.gif" src="" onclick="emoticon(document.private_form.message_content, ':Rofl:')"/></div><div  title=":Smiley-Koppels-83199:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/Smiley-Koppels-83199.gif" src="" onclick="emoticon(document.private_form.message_content, ':Smiley-Koppels-83199:')"/></div><div  title=":a-baa-wivf-wiv-wpeoiv-wpvn-wpeiuvb:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-baa-wivf-wiv-wpeoiv-wpvn-wpeiuvb.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-baa-wivf-wiv-wpeoiv-wpvn-wpeiuvb:')"/></div><div  title=":a-iloveyou:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-iloveyou.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-iloveyou:')"/></div><div  title=":a-love10:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-love10.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-love10:')"/></div><div  title=":a-love14:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-love14.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-love14:')"/></div><div  title=":a-love34:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-love34.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-love34:')"/></div><div  title=":a-love5:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-love5.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-love5:')"/></div><div  title=":a-loveheart2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-loveheart2.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-loveheart2:')"/></div><div  title=":a-loveyou1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/a-loveyou1.gif" src="" onclick="emoticon(document.private_form.message_content, ':a-loveyou1:')"/></div><div  title=":am:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/am.gif" src="" onclick="emoticon(document.private_form.message_content, ':am:')"/></div><div  title=":b-coffee3:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/b-coffee3.gif" src="" onclick="emoticon(document.private_form.message_content, ':b-coffee3:')"/></div><div  title=":bash-head:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/bash-head.gif" src="" onclick="emoticon(document.private_form.message_content, ':bash-head:')"/></div><div  title=":best-devil-smiley-emoticon:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/best-devil-smiley-emoticon.gif" src="" onclick="emoticon(document.private_form.message_content, ':best-devil-smiley-emoticon:')"/></div><div  title=":boss_day:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/boss_day.gif" src="" onclick="emoticon(document.private_form.message_content, ':boss_day:')"/></div><div  title=":bubu:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/bubu.gif" src="" onclick="emoticon(document.private_form.message_content, ':bubu:')"/></div><div  title=":bye:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/bye.gif" src="" onclick="emoticon(document.private_form.message_content, ':bye:')"/></div><div  title=":c-baby:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/c-baby.gif" src="" onclick="emoticon(document.private_form.message_content, ':c-baby:')"/></div><div  title=":c-kalinuxta:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/c-kalinuxta.gif" src="" onclick="emoticon(document.private_form.message_content, ':c-kalinuxta:')"/></div><div  title=":capup:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/capup.gif" src="" onclick="emoticon(document.private_form.message_content, ':capup:')"/></div><div  title=":clubrc9.gif~c200:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/clubrc9.gif~c200.gif" src="" onclick="emoticon(document.private_form.message_content, ':clubrc9.gif~c200:')"/></div><div  title=":coffe:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/coffe.gif" src="" onclick="emoticon(document.private_form.message_content, ':coffe:')"/></div><div  title=":connie:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/connie.gif" src="" onclick="emoticon(document.private_form.message_content, ':connie:')"/></div><div  title=":d-crying1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-crying1.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-crying1:')"/></div><div  title=":d-crying2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-crying2.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-crying2:')"/></div><div  title=":d-ee:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-ee.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-ee:')"/></div><div  title=":d-eeee2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-eeee2.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-eeee2:')"/></div><div  title=":d-no-no:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-no-no.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-no-no:')"/></div><div  title=":d-ntropali:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-ntropali.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-ntropali:')"/></div><div  title=":d-ntropalo2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-ntropalo2.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-ntropalo2:')"/></div><div  title=":d-sad:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-sad.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-sad:')"/></div><div  title=":d-sad2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d-sad2.gif" src="" onclick="emoticon(document.private_form.message_content, ':d-sad2:')"/></div><div  title=":d946c2d:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/d946c2d.gif" src="" onclick="emoticon(document.private_form.message_content, ':d946c2d:')"/></div><div  title=":dan:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/dan.gif" src="" onclick="emoticon(document.private_form.message_content, ':dan:')"/></div><div  title=":dizziness:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/dizziness.gif" src="" onclick="emoticon(document.private_form.message_content, ':dizziness:')"/></div><div  title=":doe:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/doe.gif" src="" onclick="emoticon(document.private_form.message_content, ':doe:')"/></div><div  title=":driver:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/driver.gif" src="" onclick="emoticon(document.private_form.message_content, ':driver:')"/></div><div  title=":e-gyros:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/e-gyros.gif" src="" onclick="emoticon(document.private_form.message_content, ':e-gyros:')"/></div><div  title=":e-masa1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/e-masa1.gif" src="" onclick="emoticon(document.private_form.message_content, ':e-masa1:')"/></div><div  title=":e-masa21:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/e-masa21.gif" src="" onclick="emoticon(document.private_form.message_content, ':e-masa21:')"/></div><div  title=":ey:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/ey.gif" src="" onclick="emoticon(document.private_form.message_content, ':ey:')"/></div><div  title=":f-doyleia:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-doyleia.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-doyleia:')"/></div><div  title=":f-dream2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-dream2.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-dream2:')"/></div><div  title=":f-happydance:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-happydance.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-happydance:')"/></div><div  title=":f-happyrun1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-happyrun1.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-happyrun1:')"/></div><div  title=":f-help1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-help1.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-help1:')"/></div><div  title=":f-koynia1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-koynia1.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-koynia1:')"/></div><div  title=":f-koynia2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-koynia2.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-koynia2:')"/></div><div  title=":f-moires:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-moires.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-moires:')"/></div><div  title=":f-moto:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-moto.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-moto:')"/></div><div  title=":f-please:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-please.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-please:')"/></div><div  title=":f-summer1:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-summer1.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-summer1:')"/></div><div  title=":f-sxoinaki:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/f-sxoinaki.gif" src="" onclick="emoticon(document.private_form.message_content, ':f-sxoinaki:')"/></div><div  title=":filakia:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/filakia.gif" src="" onclick="emoticon(document.private_form.message_content, ':filakia:')"/></div><div  title=":frau-trinkt:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/frau-trinkt.gif" src="" onclick="emoticon(document.private_form.message_content, ':frau-trinkt:')"/></div><div  title=":geiamas:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/geiamas.gif" src="" onclick="emoticon(document.private_form.message_content, ':geiamas:')"/></div><div  title=":giphy:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/giphy.gif" src="" onclick="emoticon(document.private_form.message_content, ':giphy:')"/></div><div  title=":guitar:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/guitar.gif" src="" onclick="emoticon(document.private_form.message_content, ':guitar:')"/></div><div  title=":hiall:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/hiall.gif" src="" onclick="emoticon(document.private_form.message_content, ':hiall:')"/></div><div  title=":iloveyou:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/iloveyou.gif" src="" onclick="emoticon(document.private_form.message_content, ':iloveyou:')"/></div><div  title=":jharo:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/jharo.gif" src="" onclick="emoticon(document.private_form.message_content, ':jharo:')"/></div><div  title=":kaamwali:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/kaamwali.gif" src="" onclick="emoticon(document.private_form.message_content, ':kaamwali:')"/></div><div  title=":kisslove:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/kisslove.gif" src="" onclick="emoticon(document.private_form.message_content, ':kisslove:')"/></div><div  title=":kisslove2:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/kisslove2.gif" src="" onclick="emoticon(document.private_form.message_content, ':kisslove2:')"/></div><div  title=":leb:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/leb.gif" src="" onclick="emoticon(document.private_form.message_content, ':leb:')"/></div><div  title=":letsdance:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/letsdance.gif" src="" onclick="emoticon(document.private_form.message_content, ':letsdance:')"/></div><div  title=":lo:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/lo.gif" src="" onclick="emoticon(document.private_form.message_content, ':lo:')"/></div><div  title=":moro:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/moro.gif" src="" onclick="emoticon(document.private_form.message_content, ':moro:')"/></div><div  title=":mpou:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/mpou.gif" src="" onclick="emoticon(document.private_form.message_content, ':mpou:')"/></div><div  title=":music:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/music.gif" src="" onclick="emoticon(document.private_form.message_content, ':music:')"/></div><div  title=":musical:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/musical.gif" src="" onclick="emoticon(document.private_form.message_content, ':musical:')"/></div><div  title=":nanana:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/nanana.gif" src="" onclick="emoticon(document.private_form.message_content, ':nanana:')"/></div><div  title=":nevra:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/nevra.gif" src="" onclick="emoticon(document.private_form.message_content, ':nevra:')"/></div><div  title=":nono:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/nono.gif" src="" onclick="emoticon(document.private_form.message_content, ':nono:')"/></div><div  title=":proskino:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/proskino.gif" src="" onclick="emoticon(document.private_form.message_content, ':proskino:')"/></div><div  title=":qaf:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/qaf.gif" src="" onclick="emoticon(document.private_form.message_content, ':qaf:')"/></div><div  title=":rss4:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/rss4.gif" src="" onclick="emoticon(document.private_form.message_content, ':rss4:')"/></div><div  title=":smile-goodbye:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/smile-goodbye.gif" src="" onclick="emoticon(document.private_form.message_content, ':smile-goodbye:')"/></div><div  title=":smile:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/smile.png" src="" onclick="emoticon(document.private_form.message_content, ':smile:')"/></div><div  title=":t4835:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/t4835.gif" src="" onclick="emoticon(document.private_form.message_content, ':t4835:')"/></div><div  title=":thumbsup:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/thumbsup.gif" src="" onclick="emoticon(document.private_form.message_content, ':thumbsup:')"/></div><div  title=":tye5ye:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/tye5ye.gif" src="" onclick="emoticon(document.private_form.message_content, ':tye5ye:')"/></div><div  title=":usdg:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/usdg.gif" src="" onclick="emoticon(document.private_form.message_content, ':usdg:')"/></div><div  title=":wildthing:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/wildthing.gif" src="" onclick="emoticon(document.private_form.message_content, ':wildthing:')"/></div><div  title=":z1202:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1202.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1202:')"/></div><div  title=":z1207:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1207.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1207:')"/></div><div  title=":z1208:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1208.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1208:')"/></div><div  title=":z1251:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1251.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1251:')"/></div><div  title=":z1252:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1252.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1252:')"/></div><div  title=":z1253:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1253.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1253:')"/></div><div  title=":z1254:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1254.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1254:')"/></div><div  title=":z1255:" class="emoticon closesmilies_priv"><img  class="lazyboom" data-img="emoticon/z1255.gif" src="" onclick="emoticon(document.private_form.message_content, ':z1255:')"/></div>			</div>
+		</div>
+	</div>
+</div>
+<div id='container_stream' class="background_stream">
+	<div id='stream_header'>
+		<i id='close_stream' class='fa fa-times'></i>
+	</div>
+	<div id='wrap_stream'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0'></iframe>
+	</div>
+</div>
+
+<div id='container_stream2' class="background_stream">
+	<div id='stream_header2'>
+		<div onclick="statusViewClose()"><i id='close_stream2' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream2'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream3' class="background_stream">
+	<div id='stream_header3'>
+		<div onclick="statusViewClose()"><i id='close_stream3' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream3'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream4' class="background_stream">
+	<div id='stream_header4'>
+		<div onclick="statusViewClose()"><i id='close_stream4' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream4'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream5' class="background_stream">
+	<div id='stream_header5'>
+		<div onclick="statusViewClose()"><i id='close_stream5' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream5'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream6' class="background_stream">
+	<div id='stream_header6'>
+		<div onclick="statusViewClose()"><i id='close_stream6' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream6'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream7' class="background_stream">
+	<div id='stream_header7'>
+		<div onclick="statusViewClose()"><i id='close_stream7' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream7'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream8' class="background_stream">
+	<div id='stream_header8'>
+		<div onclick="statusViewClose()"><i id='close_stream8' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream8'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream9' class="background_stream">
+	<div id='stream_header9'>
+		<div onclick="statusViewClose()"><i id='close_stream9' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream9'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream10' class="background_stream">
+	<div id='stream_header10'>
+		<div onclick="statusViewClose()"><i id='close_stream10' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream10'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream11' class="background_stream">
+	<div id='stream_header11'>
+		<div onclick="statusViewClose()"><i id='close_stream11' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream11'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream12' class="background_stream">
+	<div id='stream_header12'>
+		<div onclick="statusViewClose()"><i id='close_stream12' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream12'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream13' class="background_stream">
+	<div id='stream_header13'>
+		<div onclick="statusViewClose()"><i id='close_stream13' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream13'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream14' class="background_stream">
+	<div id='stream_header14'>
+		<div onclick="statusViewClose()"><i id='close_stream14' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream14'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream15' class="background_stream">
+	<div id='stream_header15'>
+		<div onclick="statusViewClose()"><i id='close_stream15' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream15'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id='container_stream16' class="background_stream">
+	<div id='stream_header16'>
+		<div onclick="statusViewClose()"><i id='close_stream16' class='fa fa-times'></i></div>
+	</div>
+	<div id='wrap_stream16'>
+		<iframe src='' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera'></iframe>
+	</div>
+</div>
+
+<div id="wrap_footer" data="1" >
+	<div class="chat_footer" id="menu_container">
+		<div id="menu_container_inside">
+						<div id="player_options" class="player_options sysmenu add_shadow hideall hidden">
+								<div class="player_list_container">
+					<p class="text_xsmall bold bpad5 rtl_elem">Radio lista</p>
+					<div id="player_listing">
+						<div class="radio_element sub_list_item" data="https://server4p.com:7000/index"><div class="sub_list_name">Bosna</div></div>					</div>
+				</div>
+								
+				<div class="player_volume">
+					<div id="sound_display" class="bcell_mid">
+						<i class="fa fa-volume-down show_sound"></i>
+					</div>
+					<div id="player_volume" class="bcell_mid boom_slider">
+						<div id="slider"></div>
+					</div>
+				</div>
+			</div>
+						
+			<div id="my_menu">
+				<div class="chat_footer_empty bcell_mid">
+										<div class="chat_player">
+						<div class="player_menu player_elem" onclick="showMenu('player_options');" >
+							<i class="fa fa-sliders"></i>
+						</div>
+						<div id="player_actual_status" class="player_elem player_button turn_on_play">
+							<i id="current_play_btn" class="fa fa-play-circle"></i>
+						</div>
+						<div id="current_player" class="player_elem player_current">
+							<p class="bellips text_xsmall theme_color">Radio stanice</p>
+							<p class="bellips" id="current_station">Bosna</p>
+						</div>
+					</div>
+									</div>
+				
+				<div id="dpriv" onclick="togglePrivate(2);" class="chat_footer_item privhide">
+					<img id="dpriv_av" src=""/>
+					<div id="dpriv_notify" class="notification bnotify">
+						0
+					</div>
+				</div>
+				
+				<div id="powers_menu" class="chat_footer_item" onclick="window.open('https://xat.gr/premium/', '_blank');">
+					<i title="Ελληνική ομάδα Chat"><i class="i_btm fa fa-comments" alt="Ελληνική ομάδα Chat"></i><span style="position: absolute;margin: 15px;margin-left: -31px;"><span data-localize="web.trade"></span></span></i>
+					<p class="bellips text_xsmall">Group</p>
+			</div>
+				<div onclick="toggleRight();" title="Λίστα χρηστών" class="chat_footer_item">
+					<i class="i_btm fa fa-users"></i>
+					<p class="bellips text_xsmall">Users</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="av_menu" class="sub_menu">
+	<div id="av_head" class="btable top_background">
+		<div class="bcell_mid avavatar_box">
+			<img class="avavatar"  src=""/>
+		</div>
+		<div class="bcell_mid avusername_box">
+			<p class="avusername bellips"></p>
+		</div>
+	</div>
+	<div id="avlist" class="avlist">
+	</div>
+</div>
+<div id="monitor_data" onclick="getMonitor();">
+	<p>Count: <span id="logs_counter">0</span></p>
+	<p>Speed: <span id="current_speed">0</span></p>
+	<p>Latency: <span id="current_latency">0</span></p>
+</div>
+<div id="action_menu" class="hidden">
+	<div data="" value="" data-av="" class="aclist gprivate rprivate listpriv">
+	<span class="list_icon"><i class="fa fa-comments theme_color"></i></span>Privatno</div>
+<div data="" value="" data-av="" class="aclist get_info rglobal">
+	<span class="list_icon"><i class="fa fa-user-circle-o default_color"></i></span>Pogledaj profil</div>
+<div data="" value="" data-av="" class="aclist get_actions ractions">
+	<span class="list_icon"><i class="fa fa-flash error"></i></span>Akcija</div></div>
+<div id="av_content" class="hidden">
+	<div data="" value="" data-av=""  class="avitem gprivate avpriv">
+	<span class="list_icon"><i class="fa fa-comments theme_color"></i></span>Privatno</div>
+<div data="" value="" data-av="" class="avitem get_info avglobal">
+	<span class="list_icon"><i class="fa fa-user-circle-o default_color"></i></span>Pogledaj profil</div>
+<div data="" value="" data-av="" class="avitem get_actions avactions">
+	<span class="list_icon"><i class="fa fa-flash error"></i></span>Akcija</div></div>
+<script data-cfasync="false">
+$(document).ready(function(){
+	boomAddCss('addons/adnoyer/files/adnoyer.css');
+});
+</script><script data-cfasync="false">
+openContactUs = function(){
+	$.post('addons/contact_us/system/contact_us.php', {
+		token: utk,
+		}, function(response) {
+			showModal(response, 500);
+	});
+}
+sendContactUs = function(){
+	var semail = $('#contact_us_email').val();
+	var smessage = $('#contact_us_message').val();
+	var ssubject = $('#contact_us_subject').val();
+	if(semail == '' || smessage == ''){
+		callSaved(system.emptyField, 3);
+		event.preventDefault();
+	}
+	else if (/^\s+$/.test(semail) || /^\s+$/.test(smessage)){
+		callSaved(system.emptyField, 3);
+		event.preventDefault();
+	}
+	else {
+		$('#contact_us_form').hide();
+		$('#contact_us_sending').show();
+		$.post('addons/contact_us/system/action.php', { 
+			email: semail,
+			message: smessage,
+			subject: ssubject,
+			token: utk,
+			}, function(response) {
+				if(response == 1){
+					$('#contact_us_form').remove();
+					$('#contact_us_sending').hide();
+					$('#contact_us_sent').show();
+				}
+				else if(response == 2){
+					$('#contact_us_sending').hide();
+					$('#contact_us_form').show();
+					$('#contact_us_email').val('');
+					callSaved(system.invalidEmail, 3);
+				}
+				else {
+					hideModal();
+					callSaved(system.error, 3);
+					return false;
+				}
+		});
+	}
+}
+$(document).ready(function() {
+	appLeftMenu('envelope-o', 'Contact us', 'openContactUs();');
+});
+</script>
+<script data-cfasync="false">
+
+var giphyKey = 'CB51CIvHXILEK9NcIZ9N8kP5SePEmC0r';
+var giphyLimit = 0;
+var giphyGifMax = 30;
+var giphyStickerMax = 32;
+var giphyType = 'gifs';
+var giphyBox = 'giphy_gifs';
+var giphyTemplate = '';
+var giphyMode = 1;
+var giphyTarget = 0;
+
+getGiphy = function(md){
+	giphyMode = md;
+	if(md == 2){
+		giphyTarget = $('#get_private').attr('value');
+	}
+	else {
+		giphyTarget = 0;
+	}
+	if(giphyTemplate == ''){
+		$.post('addons/giphy/system/giphy_template.php', {
+			token: utk,
+			}, function(response) {
+				showEmptyModal(response, 360);
+				resetGiphy();
+				giphySearch(1);
+				giphyTemplate = response;
+		});
+	}
+	else {
+		showEmptyModal(giphyTemplate, 360);
+		resetGiphy();
+		giphySearch(1);
+	}
+}
+giphyItemTemplate = function(i, o, c, u, t){
+	var giphyRes = '';
+	if(t == 'stickers'){
+		giphyRes = 2;
+	}
+	return '<div onclick="sendGiphy(\''+i+'\', \''+o+'\', \''+c+'\');" class="giphy_res_box'+giphyRes+'"><img src="'+u+'" autoplay loop></div>';
+}
+
+startGiphySearch = function(event, item){
+	var giphyContent = $(item).val();
+	if(event.keyCode == 13 && event.shiftKey == 0){
+		if (/^\s+$/.test(giphyContent) || giphyContent == ''){
+			return false;
+		}
+		else {
+			giphySearch(0);
+		}
+	}
+}
+resetGiphy = function(){
+	giphyType = 'gifs';
+	giphyLimit = giphyGifMax;
+	giphyBox = 'giphy_gifs';
+	$('#'+giphyBox).show();
+}
+sendGiphy = function(gid, ori, ch){
+	hideModal();
+	$.post('addons/giphy/system/action.php', {
+		origin: ori,
+		chat: ch,
+		type: giphyMode,
+		target: giphyTarget,
+		id: gid,
+		token: utk,
+		}, function(response) {
+			if(response == 20){
+				callSaved(system.cannotContact, 3);
+			}
+	});	
+}
+giphySelect = function(type){
+	if(type == 2){
+		giphyType = 'stickers';
+		giphyBox = 'giphy_stickers';
+		giphyLimit = giphyStickerMax;
+		if($('#'+giphyBox).is(':empty')){
+			giphySearch(2);
+		}
+	}
+	else {
+		giphyType = 'gifs';
+		giphyBox = 'giphy_gifs';
+		giphyLimit = giphyGifMax;
+		if($('#'+giphyBox).is(':empty')){
+			giphySearch(1);
+		}
+	}
+}
+giphySet = function(type){
+	$('.giphy_results').hide();
+	$('#'+type).show();	
+}
+giphySearch = function(type){
+	var giphyData = {};
+	var giphyUrl = '';
+	if(giphyKey == ''){
+		return false;
+	}
+	else {
+		if(type == 1){
+			giphyData = {api_key: giphyKey, limit: 8};
+			giphyUrl = 'https://api.giphy.com/v1/gifs/trending';
+		}
+		else if(type == 2){
+			giphyData = {api_key: giphyKey, limit: 16};
+			giphyUrl = 'https://api.giphy.com/v1/stickers/trending';
+		}
+		else {
+			giphyData = {q: $('#find_giphy').val(),api_key: giphyKey, limit: giphyLimit};
+			giphyUrl = 'https://api.giphy.com/v1/'+giphyType+'/search?';
+			$('#find_giphy').val('');
+		}
+		$.ajax({
+		  url: giphyUrl,
+		  type: 'GET',
+		  dataType: 'json',
+		  data: giphyData,
+		})
+		.done(function(data) {
+		  if (data.meta.status == 200 && data.data.length > 0) {
+			$('#'+giphyBox).html('');
+			$('#'+giphyBox).scrollTop(0);
+			for (var i = 0; i < data.data.length; i++) {
+				var gifId = data.data[i].id;
+				var gifOrigin = data.data[i].images.original.url;
+				var gifHeight = data.data[i].images.fixed_height_small.url;
+				var gifTumb = data.data[i].images.fixed_width_small.url;
+				if(gifTumb == ''){
+					gifTumb = data.data[i].images.fixed_width.url;
+					gifHeight = data.data[i].images.fixed_width.url;
+				}
+				$('#'+giphyBox).append(giphyItemTemplate(gifId, gifOrigin, gifHeight, gifTumb, giphyType));
+			}
+		  }
+		  else{
+			$('#'+giphyBox).html(noDataTemplate());
+		  }
+		})
+		.fail(function() {
+			return false;
+		})
+	}
+}
+
+$(document).ready(function(){
+	appInputMenu('https://bosnachat.net/addons/giphy/files/giphy.svg', 'getGiphy(1);')
+	appPrivInputMenu('https://bosnachat.net/addons/giphy/files/giphy.svg', 'getGiphy(2);')
+	boomAddCss('addons/giphy/files/giphy.css');
+});
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+
+var paintMode = 1;
+var paintTarget = 0;
+var paintBackground = '#fff';
+var paintCurrent = '#000';
+
+paintIt = function(md){
+	paintMode = md;
+	paintBackground = '#fff';
+	paintCurrent = '#000';
+	if(md == 2){
+		paintTarget = $('#get_private').attr('value');
+	}
+	else {
+		paintTarget = 0;
+	}
+	$.post('addons/paintit/system/paint_template.php', {
+		token: utk,
+		}, function(response) {
+			showModal(response, 600);
+			var el = document.getElementById('sketchpad');
+			paintPad = new Sketchpad(el , {
+				backgroundColor : paintBackground,
+				linesize : 10,
+				height :300,
+				});
+			paintSlide();
+	});
+}
+doPaintColor = function(item){
+	var color = $(item).attr('data');
+	paintPad.setLineColor(color);
+	paintCurrent = color;
+	$('.paint_colored').css('background', color);
+	closePaint();
+}
+openPaintColor = function(){
+	$('#paint_eraser').removeClass('paint_selected');
+	paintPad.setLineColor(paintCurrent);
+	showMenu('paint_colors');
+}
+openNewPaint = function(){
+	$('#paint_eraser').removeClass('paint_selected');
+	paintPad.setLineColor(paintCurrent);
+	showMenu('paint_new');
+}
+closePaint = function(){
+	$('.paint_options').hide();
+}
+openPaintBrush = function(){
+	showMenu('paint_brush');
+}
+newPaint = function(item){
+	clearPaint();
+	var color = $(item).attr('data');
+	paintBackground = color;
+	paintPad.nback(color);
+}
+erasePaint = function(item){
+	closePaint();
+	if($(item).hasClass('paint_selected')){
+		var color = paintCurrent;
+		$(item).removeClass('paint_selected');
+	}
+	else {
+		var color = paintBackground;
+		$(item).addClass('paint_selected');
+	}
+	paintPad.setLineColor(color);
+}
+undoPaint = function(){
+	closePaint();
+	paintPad.undo();
+}
+redoPaint = function(){
+	closePaint();
+	paintPad.redo();
+}
+clearPaint = function(){
+	closePaint();
+	$('#paint_eraser').removeClass('paint_selected');
+	paintPad.setLineColor(paintCurrent);
+	paintPad.clear();
+}
+unwaitPaint = function(){
+	paintWait = 0;
+}
+var paintWait = 0;
+sendPaintIt = function(){
+	var url = canvas.toDataURL('image/png');
+	if(paintWait == 0){
+		paintWait = 1;
+		hideModal();
+		$.ajax({
+			url: "addons/paintit/system/action.php",
+			type: "post",
+			cache: false,
+			dataType: 'json',
+			data: { 
+				paint_image: url,
+				type: paintMode,
+				target: paintTarget,
+				token: utk
+			},
+			success: function(response){
+				if(response.code == 5){
+					callSaved(system.cannotUser, 3);
+				}
+				if(response.code == 0){
+					callSaved(system.error, 3);
+				}
+				setTimeout(unwaitPaint, 5000);
+			},
+			error: function(){
+				callSaved(system.error, 3);
+				setTimeout(unwaitPaint, 5000);
+			}
+		});	
+	}
+	else {
+		event.preventDefault();
+	}
+}
+paintSlide = function(){
+	var paintSlider = $('#paint_slider');
+	paintSlider.slider({
+		range: "min",
+		min: 1,
+		max:200,
+		value: 10,
+		slide: function(event, ui) {
+			var size = paintSlider.slider('value');
+			paintPad.setLineSize(size);
+			$('#paint_size').text(size+'px');
+		},
+		stop: function(event,ui) {
+			var psize = paintSlider.slider('value');
+			paintPad.setLineSize(psize);
+			$('#paint_size').text(psize+'px');
+		},
+	});
+}
+
+$(document).ready(function() {
+		appInputMenu('https://bosnachat.net/addons/paintit/files/paintit.svg', 'paintIt(1);');
+			appPrivInputMenu('https://bosnachat.net/addons/paintit/files/paintit.svg', 'paintIt(2);');
+		boomAddCss('addons/paintit/files/paintit.css');
+});
+</script>
+<script data-cfasync="false" type="text/javascript" src="addons/paintit/files/paintit.js?v=1.09"></script>
+<script data-cfasync="false">
+
+getClipboardImage = function(pasteEvent, callback){
+	if(pasteEvent.clipboardData == false){
+		if(typeof(callback) == "function"){
+			callback(undefined);
+		}
+	};
+	var items = pasteEvent.clipboardData.items;
+	if(items == undefined){
+		if(typeof(callback) == "function"){
+			callback(undefined);
+		}
+	};
+	for (var i = 0; i < items.length; i++) {
+		if (items[i].type.indexOf("image") == -1) continue;
+		var blob = items[i].getAsFile();
+		if(typeof(callback) == "function"){
+			callback(blob);
+		}
+	}
+}
+pasteitFocus = function(){
+	if ($('#content').is(":focus")) {
+		return 1;
+	}
+	else if ($('#message_content').is(":focus")) {
+		return 2;
+	}
+	else {
+		return 0;
+	}
+}
+unwaitPaste = function(){
+	waitPaste = 0;
+}
+var waitPaste = 0;
+
+$(document).ready(function(){
+	
+	window.addEventListener("paste", function(e){
+		getClipboardImage(e, function(imageBlob){
+			if(imageBlob){
+				var file = imageBlob;
+				var filename = file.name;
+				var pasteSize = (file.size / 1024 / 1024).toFixed(2);
+				if( pasteSize < fmw ){
+					var ext = filename.split('.').reverse()[0].toLowerCase();
+					var toPasteit = pasteitFocus();
+					if(toPasteit == 1 || toPasteit == 2){
+						var toFile = 'file_chat.php';
+						var toZone = 'chat';
+						if(toPasteit == 2){
+							toFile = 'file_private.php';
+							toZone = 'private';
+						}
+						var data = new FormData();
+						data.append('file', file);
+						data.append("token", utk);
+						data.append("zone", toZone);
+						if(toPasteit == 2){
+							data.append("target", $('#get_private').attr('value'));
+						}
+						if(waitPaste == 0){
+							waitPaste = 1;
+							$.ajax({
+								url: 'system/'+toFile,
+								data: data,
+								type: 'POST',
+								processData: false,
+								contentType: false,
+								success: function (response) {
+									setTimeout(unwaitPaste, 5000);
+								}
+							});
+						}
+					}
+				}
+			}
+		});
+	}, false);
+
+});
+
+</script>
+<script data-cfasync="false">
+
+quizLeaderboard = function(){
+	$.post('addons/quizbot/system/leaderboard.php', { 
+		token: utk,
+		}, function(response) {
+		showModal(response, 420);
+	});
+}
+
+$(document).ready(function(){
+	appMoreMenu('question-circle', 'Quiz scores', 'quizLeaderboard();');
+	boomAddCss('addons/quizbot/files/quizbot.css');
+});
+</script><script data-cfasync="false">
+
+// Roll the dice v.2.0
+// Custom plugin by JOOJ
+// for Cody chat 3+
+
+rollTheDice = function(user){
+	$.post('addons/roll_the_dice/system/action.php', { 
+		user: user,
+		token: utk,
+		}, function(response) {
+			if(response == 1){
+				callSaved("Αυτός ο χρήστης δεν ειναι στο ίδιο δωμάτιο με εσάς!", 3);
+			}
+			if(response == 2){
+                callSaved("Αυτός ο χρήστης είναι εκτός σύνδεσης!", 3);
+            }
+			hideAllModal();
+	});
+}
+
+</script><script data-cfasync="false">
+URL = window.URL || window.webkitURL;
+
+$(document).ready(function(){
+	
+	let recordingIsActive = false;
+	let remainingTime = 0;
+	let gumStream;
+	let recorder;
+	let input;
+	let AudioContext = window.AudioContext || window.webkitAudioContext;
+	let audioContext;
+	
+		function blinkChat() {
+		$('#recording_chat').delay(400).fadeTo(300, 0.2).delay(400).fadeTo(300, 1, blinkChat);
+	}
+			function blinkPrivate() {
+		$('#recording_private').delay(400).fadeTo(300, 0.2).delay(400).fadeTo(300, 1, blinkPrivate);
+	}
+		
+	function voiceRecord(type, recTimer) {
+		
+		recorder = undefined;
+		const constraints = {audio: true, video: false};
+		
+		navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+			if (recordingIsActive) return false;
+			recordingIsActive = true;
+			audioContext = new AudioContext();
+			gumStream = stream;
+			input = audioContext.createMediaStreamSource(stream);
+			
+			recorder = new WebAudioRecorder(input, {
+				workerDir: "addons/voice_record/files/",
+				encoding: 'mp3',
+				numChannels: 2,
+				onEncoderLoading: (recorder, encoding) => {
+				},
+				onEncoderLoaded: (recorder, encoding) => {
+				}
+			});
+			
+			recorder.onComplete = (recorder, blob) => {
+				var formData = new FormData();
+				formData.append('file', blob);
+				formData.append('token', utk);
+								if(type == 'private'){
+					formData.append('target', $('#get_private').attr('value'));
+					formData.append('private', 1);
+				}
+								$.ajax('addons/voice_record/system/blob_chat.php', {
+					method: "POST",
+					data: formData,
+					processData: false,
+					contentType: false,
+					success: function (response) {
+						if(response == 0){
+							callSaved(system.error, 3);
+						}
+						if(response == 1){
+							callSaved(system.wrongFile, 3);
+						}
+						if(response == 2){
+							callSaved(system.cannotContact, 3);
+						}
+						$('#recording_' + type + '_spin').replaceWith('<i class="fa fa-microphone" id="record_' + type + '"></i>');
+					},
+					error: function () {
+					}
+				});
+			};
+			
+			recorder.setOptions({
+				timeLimit: recTimer,
+				encodeAfterRecord: true,
+				mp3: {bitRate: 96}
+			});
+			
+			recorder.startRecording();
+			
+			if (recTimer !== 0) {
+				const time_callback = _RemainingTime => {
+					$('#' + type + '_counter').html(_RemainingTime);
+					if (_RemainingTime === 0 && recordingIsActive) {
+						stopRecording(type);
+					}
+				};
+				voiceTimer(recTimer, time_callback);
+			}
+			
+			$('#record_' + type).replaceWith('<i class="record-circle fa fa-circle" id="recording_' + type + '"><span id="' + type + '_counter" class="counter_text"></span></i>');
+						if(type == 'chat'){
+				blinkChat();
+			}
+									if(type == 'private'){
+				blinkPrivate();
+			}
+			
+		}).catch((errors) => {
+			console.log(errors);
+			alert('Please allow microphone access!');
+		});
+
+	}
+	function stopRecording(type) {
+		remainingTime = 0;
+		recordingIsActive = false;
+		$('#recording_' + type).replaceWith('<i class="fa fa-spinner fa-spin fa-fw" id="recording_' + type + '_spin"></i>');
+		gumStream.getAudioTracks()[0].stop();
+		recorder.finishRecording();
+	}
+	function voiceTimer(seconds, cb) {
+		remainingTime = seconds;
+		setTimeout(() => {
+			cb(remainingTime);
+			if (remainingTime > 0) {
+				voiceTimer(remainingTime - 1, cb);
+			}
+		}, 1000);
+	}		
+
+		$('<div class="input_item main_item base_main"><i class="fa fa-microphone record" id="record_chat"></i></div>').insertAfter('#emo_item');
+	$(document).on("click", "#record_chat", () => voiceRecord('chat', 30));
+	$(document).on("click", "#recording_chat", () => stopRecording('chat'));
+			$('<div class="input_item main_item base_main"><i class="fa fa-microphone record" id="record_private"></i>').insertAfter('#emo_item_priv');
+	$(document).on("click", "#record_private", () => voiceRecord('private', 30));
+	$(document).on("click", "#recording_private", () => stopRecording('private'));
+		
+	boomAddCss('addons/voice_record/files/voice_record.css');
+	
+});
+</script>
+<script data-cfasync="false" src="addons/voice_record/files/WebAudioRecorder.min.js"></script>
+<script data-cfasync="false" type="text/javascript">
+vpBlock = function(){
+	$.post('addons/vpblock/system/action.php', { 
+		vpblock: 1,
+		token: utk,
+		}, function(response) {
+			if(response == 1){
+				location.reload(true);
+			}
+	});
+}
+$(document).ready(function(){
+	vpBlock();
+});
+</script>
+<script data-cfasync="false">
+var requestType = 'reg';
+var superbot = 'BosnaBot';
+var superLow = 'bosnabot';
+var superbotId = '6';
+
+$(document).ready(function(){
+
+	$('#main_input').submit(function(event){
+		var checkbot = $('#content').val();
+		var checkbotLow = $('#content').val().toLowerCase();
+		if( checkbot.match(superbot) || checkbotLow.match(superLow) ){
+			$.post('addons/superbot/system/superbot_main.php', { 
+				search: checkbot,
+				name: superbot,
+				type: requestType,
+				token: utk,
+				}, function(response) {
+
+			});
+		}
+	});
+	$('#private_input').submit(function(event){
+		var uPrivate = $('#get_private').attr('value');
+		var privBot = $('#message_content').val();
+		if(privBot == '' || /^\s+$/.test($('#message_content').val()) ){
+			event.preventDefault();
+		}
+		else {
+			if(uPrivate == superbotId){
+				$.post('addons/superbot/system/superbot_private.php', { 
+					search: privBot,
+					name: superbot,
+					bid: uPrivate,
+					token: utk,
+					}, function(response) {
+
+				});
+			}
+		}
+	});
+});
+</script>
+<script data-cfasync="false">
+openVip = function(){
+	$.post('addons/vip/system/vip_box.php', { 
+		token: utk,
+		}, function(response) {
+			showModal(response, 460);
+	});
+}
+vipRecover = function(){
+	$.post('addons/vip/system/vip_recover.php', { 
+		vip_recover: 1,
+		token: utk,
+		}, function(response) {
+	});
+}
+$(document).ready(function(){
+	boomAddCss('addons/vip/files/vip.css');
+		});
+</script>
+
+
+
+<script data-cfasync="false">
+
+// Sound Effects v.1.0
+// Custom plugin by JOOJ
+// for Cody chat 3+
+
+$(document).ready(function(){
+		appInputMenu('https://bosnachat.net/addons/sound_effects/files/icon.png', 'getSounds();');
+		boomAddCss('addons/sound_effects/files/sound_effects.css');
+	soundEffectsHTML='<div class="se_menu_container"><div class="sound_effects_menu_text">Sound Effects</div><div class="sound_effects_menu"><i class="fa fa-volume-up"></i><div class="se_switch_item_switch"><div class="se_switch_wrap"><div class="btable se_bswitch onswitch" data="1"><div class="bball_wrap"><div class="se_bball se_onball"></div></div></div></div></div></div></div>';
+	
+    playerExists = $('.chat_player');
+    if (playerExists.length){
+		$('.chat_player').append(soundEffectsHTML);
+    }else{
+		$('.chat_footer_empty').append(soundEffectsHTML);
+	}
+	
+	soundEffects = 0;
+	$(document).on('click', '.se_bswitch', function(){
+		var cval = $(this).attr('data');
+		if(cval == 1){
+			$(this).attr('data', 0);
+			$(this).switchClass( "onswitch", "offswitch", 100);
+			$(this).find('.se_bball').switchClass( "se_onball", "offball", 100);
+			soundEffects = 0;
+		}
+		else if(cval == 0){
+			$(this).attr('data', 1);
+			$(this).switchClass( "offswitch", "onswitch", 100);
+			$(this).find('.se_bball').switchClass( "offball", "se_onball", 100);
+			soundEffects = 1;
+		}
+	});
+	
+	var modal = document.getElementById('small_modal');	
+	var largeModal = document.getElementById('large_modal');
+	
+	setTimeout(function(){ 
+		soundEffects = 1; 
+	}, 3000);
+});
+
+
+
+soundEffectsEnabled = function(){
+	if(soundEffects == 1){
+		return true;
+	}
+}
+
+
+
+getSounds = function(){
+	$.post('addons/sound_effects/system/box.php', { 
+		token: utk,
+		}, function(response) {
+		showModal(response, 400);
+	});
+}
+
+function sendSound(sound){
+	$.post('addons/sound_effects/system/action.php', { 
+		content: sound,
+		token: utk,
+		}, function(response) {
+			if (response == 2){
+				callSaved(system.error, 3);
+			}
+			if (response == 3){
+				callSaved('You are trying to send sounds too quickly. Please try again in a few moments.', 3);
+			}
+			if (response == 1){
+				hideAllModal();
+			}
+	});
+}
+
+
+
+</script>
+
+<script data-cfasync="false">
+
+$(document).ready(function(){
+	
+	$('#main_input').submit(function(event){
+		var commandos = $('#content').val();
+		if(commandos.match("^=") ){
+			chatInput();
+			$.post('addons/commandos/system/action.php', {
+				commandos: commandos,
+				token: utk,
+				}, function(response) {
+					if(response == 1){
+						return false;
+					}
+					else if(response == 2){
+						callSaved(system.invalidCommand, 3);
+					}
+					else if(response == 3){
+						callSaved(system.noUser, 3);
+					}
+					else if(response == 4){
+						callSaved('This command require username', 3);
+					}
+					else{
+						callSaved(system.error, 3);
+					}
+			});
+			event.stopImmediatePropagation();
+			return false;
+		}
+	});
+
+});
+
+</script>
+<script data-cfasync="false">
+
+var snippet = 'snippet';
+var youtubeLimit = 16;
+var youtubeTemplate = '';
+var youtubeMode = 1;
+var youtubeTarget = 0;
+
+getYoutube = function(md){
+	youtubeMode = md;
+	if(md == 2){
+		youtubeTarget = $('#get_private').attr('value');
+	}
+	else {
+		youtubeTarget = 0;
+	}
+	if(youtubeTemplate == ''){
+		$.post('addons/youtube/system/youtube_template.php', {
+			token: utk,
+			}, function(response) {
+				showEmptyModal(response, 400);
+				youtubeTemplate = response;
+		});
+	}
+	else {
+		showEmptyModal(youtubeTemplate, 400);
+	}
+}
+youtubeItemTemplate = function(youId, youTitle, youTumb){
+	ytmp = '';
+	ytmp += '<div onclick="sendYoutube(\''+youId+'\');" class="btable you_result">';
+	ytmp += '<div class="bcell pad5">';
+	ytmp += '<img class="you_tumb" src="'+youTumb+'" autoplay loop/>';
+	ytmp += '<div class="you_text"><p class="bold">'+youTitle+'</p></div>';
+	ytmp += '</div>';
+	ytmp += '</div>';
+	return ytmp;
+}
+
+startYoutubeSearch = function(event, item){
+	var youtubeContent = $(item).val();
+	if(event.keyCode == 13 && event.shiftKey == 0){
+		if (/^\s+$/.test(youtubeContent) || youtubeContent == ''){
+			return false;
+		}
+		else {
+			youtubeSearch(youtubeContent);
+		}
+	}
+}
+sendYoutube = function(yid){
+	hideModal();
+	$.post('addons/youtube/system/action.php', {
+		id: yid,
+		type: youtubeMode,
+		target: youtubeTarget,
+		token: utk,
+		}, function(response) {
+			if(response == 20){
+				callSaved(system.cannotContact, 3);
+			}
+	});	
+}
+youtubeSearch = function(event, item){
+	if(event.keyCode == 13 && event.shiftKey == 0){
+		var youtubeContent = $(item).val();
+		$('#find_youtube').val('');
+		if (/^\s+$/.test(youtubeContent) || youtubeContent == ''){
+			return false;
+		}
+		else{
+			$.ajax({
+				url: "addons/youtube/system/youtube_search.php",
+				type: "post",
+				cache: false,
+				dataType: 'json',
+				data: { 
+					youtube_search: youtubeContent,
+					token: utk,
+				},
+				success: function(data){
+					if (typeof data == 'object' && data.pageInfo.totalResults > 0 && data.pageInfo.resultsPerPage > 0) {
+						$('#youtube_results').html('');
+						$('#youtube_results').scrollTop(0);
+						for (var i = 0; i < data.items.length; i++) {
+							$('#youtube_results').append(youtubeItemTemplate(data.items[i].id.videoId, data.items[i].snippet.title, data.items[i].snippet.thumbnails.medium.url));	
+						}
+					}
+					else{
+						$('#youtube_results').html(noDataTemplate());
+					}
+				},
+			});	
+		}
+	}
+}
+
+$(document).ready(function(){
+	appInputMenu('https://bosnachat.net/addons/youtube/files/youtube.svg', 'getYoutube(1);');
+	appPrivInputMenu('https://bosnachat.net/addons/youtube/files/youtube.svg', 'getYoutube(2);');
+	boomAddCss('addons/youtube/files/youtube.css');
+});
+
+</script>
+<script data-cfasync="false" src="js/function_main.js?v=1.09"></script>
+<script data-cfasync="false" src="js/function_player.js?v=1.09"></script>
+<script data-cfasync="false" src="js/game.js?v=1.09"></script>
+<script data-cfasync="false" src="js/ldap-function.js?v=1.09"></script>
+<script data-cfasync="false" src="js/ldap-library.js?v=1.09"></script>
+<script>
+var dateObj = new Date();
+var month = dateObj.getUTCMonth() + 1; //months from 1-12
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+
+
+var seed = day.toString() + month.toString() + year.toString();
+function random() {
+    var x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+}
+
+
+
+function rand(num) {return Math.floor(random()*num);}
+var rnd=0;
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {if (this.readyState == 4 && this.status == 200) {fras(this);}};
+xmlhttp.open("GET", "/system/language/Croatia/random.xml", true);xmlhttp.send();
+
+function fras(xml) {
+var xmlDoc = xml.responseXML;
+var table="";
+var x=xmlDoc.getElementsByTagName("quotes");
+rnd=rand(x.length);i=rnd;
+table += "<h4 style='text-align: left;'>" + x[i].getElementsByTagName("quot")[0].childNodes[0].nodeValue+"<br/><br/></h4><h4 style='text-align: right;'><b><i>"+x[i].getElementsByTagName("auth")[0].childNodes[0].nodeValue+"</h4></b></i>";
+document.getElementById("rito").innerHTML = table;
+} </script>
+<script>
+showCamera = function(){
+	
+		$('#camera_container').html("<iframe src='/mycam/publish.php?sdpURL=wss%3A%2F%2Flivecam.xat.gr%2Fwebrtc-session.json&applicationName=webrtc&streamName=qu8avjmr2zio69wefdkxc53gysbnhl7p0t41&audioBitrate=64&audioCodec=opus&videoBitrate=360&videoCodec=42e01f&videoFrameRate=29.97&frameSize=default' allowfullscreen scrolling='no' frameborder='0' allowtransparency='true' allow='geolocation; microphone; camera' width='235px'; height='260px';></iframe><div class=\"list_element left_item\" onclick=\"hideCamera();\"><div class=\"left_item_icon\"><i class=\"fa fa-video-camera input_icon\"></i></div><div class=\"left_item_text\"> Close Camera</div></div>");
+		updateStatusCam();
+		
+	
+}
+
+$('#camera_container').html("<img id=\"logo_cam\" alt=\"Camera\" style=\"width:235px\" src=\"images/camera/camlogo_1_9430413392681625.png\" onerror=\"this.src='images/camera/default/livecamera.png'\"/><div class=\"list_element left_item\" onclick=\"showCamera();\"><div class=\"left_item_icon\"><i class=\"fa fa-video-camera input_icon\"></i></div><div class=\"left_item_text\"> Show Camera</div></div>");
+$('#openCamera').html("<img id=\"logo_cam\" alt=\"Camera\" style=\"width:235px\" src=\"images/camera/camlogo_1_9430413392681625.png\" onerror=\"this.src='images/camera/default/livecamera.png'\"/><div class=\"list_element left_item\" onclick=\"checkOpenCamera();\"><div class=\"left_item_icon\"><i class=\"fa fa-video-camera input_icon\"></i></div><div class=\"left_item_text\"> Show Camera</div></div>");
+hideCamera = function(){
+	
+		$('#camera_container').html("<img id=\"logo_cam\" alt=\"Camera\" style=\"width:235px\" src=\"images/camera/camlogo_1_9430413392681625.png\" onerror=\"this.src='images/camera/default/livecamera.png'\"/><div class=\"list_element left_item\" onclick=\"showCamera();\"><div class=\"left_item_icon\"><i class=\"fa fa-video-camera input_icon\"></i></div><div class=\"left_item_text\"> Show Camera</div></div>");
+	updateStatusCamClose();
+}
+</script><div id="side_content" class="chat_side_panel">
+	<div id="side_inside">
+	</div>
+</div>
+<div id="small_modal" class="small_modal_out modal_back">
+	<div class="small_modal_in modal_in">
+		<div class="modal_top">
+			<div class="modal_top_empty">
+			</div>
+			<div class="modal_top_element close_modal">
+				<i class="fa fa-times"></i>
+			</div>
+		</div>
+		<div id="small_modal_content" class="modal_content small_modal_content">
+		</div>
+	</div>
+</div>
+<div id="large_modal" class="large_modal_out modal_back">
+	<div class="large_modal_in modal_in">
+		<div id="large_modal_content" class="modal_content large_modal_content">
+		</div>
+	</div>
+</div>
+<div id="over_modal" class="over_modal_out modal_back">
+	<div class="over_modal_in modal_in">
+		<div class="modal_top">
+			<div class="modal_top_empty">
+			</div>
+			<div class="modal_top_element close_over">
+				<i class="fa fa-times"></i>
+			</div>
+		</div>
+		<div id="over_modal_content" class="modal_content over_modal_content">
+		</div>
+	</div>
+</div>
+<div id="over_emodal" class="over_emodal_out modal_back">
+	<div class="over_emodal_in modal_in">
+		<div id="over_emodal_content" class="modal_content over_emodal_content">
+		</div>
+	</div>
+</div>
+<div class="saved_data">
+	<span class="saved_span"></span>
+</div>
+<audio class="hidden" id="private_sound" src="https://bosnachat.net/sounds/private.mp3?v=1.09"></audio>
+<audio class="hidden" id="message_sound" src="https://bosnachat.net/sounds/new_messages.mp3?v=1.09"></audio>
+<audio class="hidden" id="username_sound" src="https://bosnachat.net/sounds/username.mp3?v=1.09"></audio>
+<audio class="hidden" id="whistle_sound" src="https://bosnachat.net/sounds/whistle.mp3?v=1.09"></audio>
+<audio class="hidden" id="notify_sound" src="https://bosnachat.net/sounds/notify.mp3?v=1.09"></audio>
+<audio class="hidden" id="news_sound" src="https://bosnachat.net/sounds/new_news.mp3?v=1.09"></audio>
+</body>
+</html>
